@@ -140,8 +140,7 @@ For later updates, the above procedure is not necessary. Just do the following:
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 1.0.3 (2024-10-18)
 
 - (Scrounger) bug fixes
 
