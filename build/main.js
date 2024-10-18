@@ -321,7 +321,7 @@ class WeatherflowTempestApi extends utils.Adapter {
       } else {
         const obj = await this.getObjectAsync(id);
         if (obj && obj.common) {
-          if (JSON.stringify(obj.common) !== JSON.stringify(common)) {
+          if (!myHelper.isChannelCommonEqual(obj.common, common)) {
             await this.extendObject(id, { common });
             this.log.debug(`${logPrefix} channel updated '${id}'`);
           }
@@ -350,7 +350,7 @@ class WeatherflowTempestApi extends utils.Adapter {
       } else {
         const obj = await this.getObjectAsync(id);
         if (obj && obj.common) {
-          if (JSON.stringify(obj.common) !== JSON.stringify(stateDef.common)) {
+          if (!myHelper.isStateCommonEqual(obj.common, stateDef.common)) {
             await this.extendObject(id, { common: stateDef.common });
             this.log.debug(`${logPrefix} updated common properties of state '${id}'`);
           }

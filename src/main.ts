@@ -6,7 +6,7 @@
 // you need to create an adapter
 import * as utils from '@iobroker/adapter-core';
 import moment from 'moment';
-import * as schedule from "node-schedule";
+import * as schedule from 'node-schedule';
 
 import * as forecCastTypes from './lib/foreCastTypes';
 import * as myHelper from './lib/helper';
@@ -68,6 +68,7 @@ class WeatherflowTempestApi extends utils.Adapter {
 
 			callback();
 
+			// eslint-disable-next-line
 		} catch (e) {
 			callback();
 		}
@@ -374,7 +375,7 @@ class WeatherflowTempestApi extends utils.Adapter {
 				const obj = await this.getObjectAsync(id);
 
 				if (obj && obj.common) {
-					if (JSON.stringify(obj.common) !== JSON.stringify(common)) {
+					if (!myHelper.isChannelCommonEqual(obj.common as ioBroker.ChannelCommon, common)) {
 						await this.extendObject(id, { common: common });
 						this.log.debug(`${logPrefix} channel updated '${id}'`);
 					}
@@ -414,7 +415,7 @@ class WeatherflowTempestApi extends utils.Adapter {
 				const obj = await this.getObjectAsync(id);
 
 				if (obj && obj.common) {
-					if (JSON.stringify(obj.common) !== JSON.stringify(stateDef.common)) {
+					if (!myHelper.isStateCommonEqual(obj.common as ioBroker.StateCommon, stateDef.common)) {
 						await this.extendObject(id, { common: stateDef.common });
 						this.log.debug(`${logPrefix} updated common properties of state '${id}'`);
 					}
