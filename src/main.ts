@@ -5,6 +5,7 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 import * as utils from '@iobroker/adapter-core';
+import url from 'node:url';
 import moment from 'moment';
 import * as schedule from 'node-schedule';
 
@@ -500,10 +501,15 @@ class WeatherflowTempestApi extends utils.Adapter {
 	}
 }
 
-if (require.main !== module) {
-	// Export the constructor in compact mode
-	module.exports = (options: Partial<utils.AdapterOptions> | undefined) => new WeatherflowTempestApi(options);
-} else {
-	// otherwise start the instance directly
-	(() => new WeatherflowTempestApi())();
+// replace only needed for dev system
+const modulePath = url.fileURLToPath(import.meta.url).replace('/development/', '/node_modules/');
+
+if (process.argv[1] === modulePath) {
+	// start the instance directly
+	new WeatherflowTempestApi();
+}
+
+export default function startAdapter(options: Partial<utils.AdapterOptions> | undefined): WeatherflowTempestApi {
+	// compact mode
+	return new WeatherflowTempestApi(options);
 }
