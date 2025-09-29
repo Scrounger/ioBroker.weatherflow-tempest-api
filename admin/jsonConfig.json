@@ -23,21 +23,30 @@
 			"newLine": true,
 			"type": "text",
 			"label": "stationId",
+			"xl": 2,
+			"lg": 2,
+			"md": 2,
 			"sm": 12,
-			"md": 2
+			"xs": 12
 		},
 		"accessToken": {
 			"type": "password",
 			"label": "accessToken",
+			"xl": 3,
+			"lg": 3,
+			"md": 3,
 			"sm": 12,
-			"md": 3
+			"xs": 12
 		},
 		"updateCron": {
 			"type": "cron",
 			"label": "updateCron",
 			"complex": true,
+			"xl": 2,
+			"lg": 2,
+			"md": 2,
 			"sm": 12,
-			"md": 2
+			"xs": 12
 		},
 		"dividerUnits": {
 			"newLine": true,
@@ -59,8 +68,11 @@
 					"value": "f"
 				}
 			],
+			"xl": 1,
+			"lg": 1,
+			"md": 1,
 			"sm": 12,
-			"md": 1
+			"xs": 12
 		},
 		"unitWind": {
 			"type": "select",
@@ -91,8 +103,11 @@
 					"value": "lfm"
 				}
 			],
+			"xl": 1,
+			"lg": 1,
+			"md": 1,
 			"sm": 12,
-			"md": 1
+			"xs": 12
 		},
 		"unitPressure": {
 			"type": "select",
@@ -115,8 +130,11 @@
 					"value": "hpa"
 				}
 			],
+			"xl": 1,
+			"lg": 1,
+			"md": 1,
 			"sm": 12,
-			"md": 1
+			"xs": 12
 		},
 		"unitPrecipitation": {
 			"type": "select",
@@ -135,8 +153,11 @@
 					"value": "in"
 				}
 			],
+			"xl": 1,
+			"lg": 1,
+			"md": 1,
 			"sm": 12,
-			"md": 1
+			"xs": 12
 		},
 		"unitDistance": {
 			"type": "select",
@@ -151,8 +172,11 @@
 					"value": "mi"
 				}
 			],
+			"xl": 1,
+			"lg": 1,
+			"md": 1,
 			"sm": 12,
-			"md": 1
+			"xs": 12
 		},
 		"dividerForecast": {
 			"newLine": true,
@@ -164,14 +188,20 @@
 			"type": "checkbox",
 			"label": "currentEnabled",
 			"newLine": true,
+			"xl": 1,
+			"lg": 1,
+			"md": 1,
 			"sm": 12,
-			"md": 1
+			"xs": 12
 		},
 		"hourlyEnabled": {
 			"type": "checkbox",
 			"label": "hourlyEnabled",
+			"xl": 1,
+			"lg": 1,
+			"md": 1,
 			"sm": 12,
-			"md": 1
+			"xs": 12
 		},
 		"hourlyMax": {
 			"type": "number",
@@ -179,14 +209,20 @@
 			"disabled": "!data.hourlyEnabled",
 			"min": 1,
 			"max": 220,
+			"xl": 1,
+			"lg": 1,
+			"md": 1,
 			"sm": 12,
-			"md": 1
+			"xs": 12
 		},
 		"dailyEnabled": {
 			"type": "checkbox",
 			"label": "dailyEnabled",
+			"xl": 1,
+			"lg": 1,
+			"md": 1,
 			"sm": 12,
-			"md": 1
+			"xs": 12
 		},
 		"dailyMax": {
 			"type": "number",
@@ -194,8 +230,11 @@
 			"disabled": "!data.dailyEnabled",
 			"min": 0,
 			"max": 20,
+			"xl": 1,
+			"lg": 1,
+			"md": 1,
 			"sm": 12,
-			"md": 1
+			"xs": 12
 		}
 	}
 }

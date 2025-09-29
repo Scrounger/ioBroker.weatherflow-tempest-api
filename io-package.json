@@ -54,22 +54,8 @@
         "pl": "zintegrowana prognoza api\npoczątkowe zwolnienie",
         "uk": "прогнозування api інтегрований\nпочатковий реліз",
         "zh-cn": "集成预测 api 集成\n初步释放"
-      },
-      "0.0.1": {
-        "en": "initial release",
-        "de": "Erstveröffentlichung",
-        "ru": "Начальная версия",
-        "pt": "lançamento inicial",
-        "nl": "Eerste uitgave",
-        "fr": "Première version",
-        "it": "Versione iniziale",
-        "es": "Versión inicial",
-        "pl": "Pierwsze wydanie",
-        "uk": "Початкова версія",
-        "zh-cn": "首次出版"
       }
     },
-    "title": "WeatherFlow Tempest API",
     "titleLang": {
       "en": "WeatherFlow Tempest API",
       "de": "WeatherFlow Tempest-API",
@@ -106,13 +92,11 @@
       "tempest",
       "weatherflow"
     ],
-    "license": "MIT",
     "licenseInformation": {
       "type": "free",
       "license": "MIT"
     },
     "platform": "Javascript/Node.js",
-    "main": "build/main.js",
     "icon": "weatherflow-tempest-api.png",
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/Scrounger/ioBroker.weatherflow-tempest-api/main/admin/weatherflow-tempest-api.png",

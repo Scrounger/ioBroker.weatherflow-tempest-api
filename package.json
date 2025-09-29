@@ -13,7 +13,8 @@
     "api",
     "forecast",
     "tempest",
-    "weatherflow"
+    "weatherflow",
+    "ioBroker"
   ],
   "repository": {
     "type": "git",
