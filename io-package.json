@@ -1,21 +1,8 @@
 {
   "common": {
     "name": "weatherflow-tempest-api",
-    "version": "1.1.0",
+    "version": "1.0.3",
     "news": {
-      "1.1.0": {
-        "en": "code optimized\nroles added\ndependencies updated\nnode minimum set to 20\nconverted to esm\neslint 9 added",
-        "de": "code optimiert\nrollen hinzugefügt\naktualisierte abhängigkeiten\nnode minimum eingestellt auf 20\nin esm umgewandelt\neslint 9 hinzugefügt",
-        "ru": "оптимизированный код\nдобавлены роли\nобновленные зависимости\nминимальный размер узла 20\nпреобразуется в эсм\nэслинт 9 добавлено",
-        "pt": "código otimizado\nfunções adicionadas\ndependências atualizadas\nnó mínimo definido para 20\nconvertido em esm\neslint 9 adicionado",
-        "nl": "code geoptimaliseerd\nrol toegevoegd\nafhankelijkheden bijgewerkt\nknooppunt minimum ingesteld op 20\nomgezet in esm\neslint 9 toegevoegd",
-        "fr": "code optimisé\nrôles ajoutés\ndépendances mises à jour\nnoeud minimum fixé à 20\nconverti en esm\neslint 9 ajouté",
-        "it": "codice ottimizzato\nruoli aggiunti\ndipendenze aggiornate\nset minimo nodo a 20\nconvertito in esm\neslint 9 aggiunto",
-        "es": "código optimizado\nfunciones adicionales\ndependencias actualizadas\nmínimo de nodo fijado a 20\nconvertido a esm\neslint 9 añadido",
-        "pl": "zoptymalizowany kod\nrole dodane\nzaktualizowane zależności\nminimum węzła ustawionego na 20\nprzeliczane na esm\ndodano eslint 9",
-        "uk": "оптимізований код\nдодано ролі\nоновлені залежності\nмінімальний набір вузлів до 20\nперетворена в есм\neslint 9 додано",
-        "zh-cn": "代码优化\n增加的角色\n更新依赖关系\n节点最小设置为 20\n转换为 esm\n增加了第9条"
-      },
       "1.0.3": {
         "en": "bug fixes",
         "de": "fehlerbehebungen",
