@@ -160,51 +160,5 @@
     "updateCron": "1,16,31,46 * * * *"
   },
   "objects": [],
-  "instanceObjects": [
-    {
-      "_id": "forecast",
-      "type": "channel",
-      "common": {
-        "name": {
-          "en": "Weather Forecast",
-          "de": "Wettervorhersage",
-          "ru": "Погода",
-          "pt": "Previsão do tempo",
-          "nl": "Weersvoorspelling",
-          "fr": "Prévisions météo",
-          "it": "Previsioni",
-          "es": "El tiempo predicho",
-          "pl": "Prognoza pogody",
-          "uk": "Погода",
-          "zh-cn": "天气预报"
-        }
-      },
-      "native": {}
-    },
-    {
-      "_id": "forecast.update",
-      "type": "state",
-      "common": {
-        "role": "button",
-        "name": {
-          "en": "update",
-          "de": "aktualisieren",
-          "ru": "обновление",
-          "pt": "atualização",
-          "nl": "bijwerken",
-          "fr": "mise à jour",
-          "it": "aggiornamento",
-          "es": "actualización",
-          "pl": "aktualizacja",
-          "uk": "оновлення",
-          "zh-cn": "更新"
-        },
-        "type": "boolean",
-        "read": false,
-        "write": true,
-        "def": true
-      },
-      "native": {}
-    }
-  ]
+  "instanceObjects": []
 }

@@ -1,11 +1,12 @@
 import * as utils from '@iobroker/adapter-core';
 import * as schedule from 'node-schedule';
+import { WftApi } from './lib/api/wft-api.js';
+import { myIob } from './lib/myIob.js';
 declare class WeatherflowTempestApi extends utils.Adapter {
-    apiEndpoint: string;
-    myTranslation: {
-        [key: string]: any;
-    } | undefined;
+    wft: WftApi;
+    myIob: myIob;
     updateSchedule: schedule.Job | undefined;
+    statesUsingValAsLastChanged: string[];
     constructor(options?: Partial<utils.AdapterOptions>);
     /**
      * Is called when databases are connected and adapter received configuration.
@@ -13,10 +14,15 @@ declare class WeatherflowTempestApi extends utils.Adapter {
     private onReady;
     /**
      * Is called when adapter shuts down - callback has to be called under any circumstances!
+     *
+     * @param callback
      */
     private onUnload;
     /**
      * Is called if a subscribed state changes
+     *
+     * @param id
+     * @param state
      */
     private onStateChange;
     private updateData;
@@ -24,11 +30,7 @@ declare class WeatherflowTempestApi extends utils.Adapter {
     private updateForeCastCurrent;
     private updateForeCastHourly;
     private updateForeCastDaily;
-    private createOrUpdateChannel;
-    private createOrUpdateState;
-    private downloadData;
-    private loadTranslation;
-    private getTranslation;
+    private statesChanged;
 }
 export default function startAdapter(options: Partial<utils.AdapterOptions> | undefined): WeatherflowTempestApi;
 export {};

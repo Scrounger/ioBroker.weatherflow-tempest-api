@@ -1,4 +1,6 @@
 // This file extends the AdapterConfig type from "@types/iobroker"
+import { WftApi } from './lib/api/wft-api.js';
+import { myIob } from './myIob.js'
 
 // Augment the globally declared type ioBroker.AdapterConfig
 declare global {
@@ -17,6 +19,11 @@ declare global {
 			dailyEnabled: boolean;
 			dailyMax: number;
 			updateCron: string;
+		}
+
+		interface myAdapter extends ioBroker.Adapter {
+			wft: WftApi;
+			myIob: myIob;
 		}
 	}
 }

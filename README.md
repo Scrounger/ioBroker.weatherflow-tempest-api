@@ -32,6 +32,8 @@ Get data for your [Tempest Weather Station](https://tempest.earth/tempest-home-w
 
 ### **WORK IN PROGRESS**
 
+- (Scrounger) code optimized
+- (Scrounger) roles added
 - (Scrounger) dependencies updated
 - (Scrounger) node minimum set to 20
 - (Scrounger) converted to esm
