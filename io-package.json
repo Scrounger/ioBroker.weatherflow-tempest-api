@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "weatherflow-tempest-api",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "news": {
+      "1.1.1": {
+        "en": "bug fixes",
+        "de": "fehlerbehebungen",
+        "ru": "исправление ошибок",
+        "pt": "correções de erros",
+        "nl": "foutherstel",
+        "fr": "corrections des bogues",
+        "it": "correzioni di bug",
+        "es": "bug fixes",
+        "pl": "poprawki błędów",
+        "uk": "виправлення помилок",
+        "zh-cn": "错误修正"
+      },
       "1.1.0": {
         "en": "code optimized\nroles added\ndependencies updated\nnode minimum set to 20\nconverted to esm\neslint 9 added",
         "de": "code optimiert\nrollen hinzugefügt\naktualisierte abhängigkeiten\nnode minimum eingestellt auf 20\nin esm umgewandelt\neslint 9 hinzugefügt",
