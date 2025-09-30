@@ -2,6 +2,7 @@ import { myTreeDefinition } from "../../myIob.js";
 import * as myHelper from '../../helper.js';
 import { ForeCastHourly } from "../../api/wft-types-forecast.js";
 import { ApiEndpoints } from "../../api/wft-api.js";
+import moment from "moment";
 
 export namespace hourly {
     let keys: string[] = undefined;
@@ -87,6 +88,14 @@ export namespace hourly {
                 iobType: 'number',
                 readVal(val: number, adapter: ioBroker.myAdapter, device: ForeCastHourly, channel: ForeCastHourly, id: string) {
                     return val * 1000;
+                },
+            },
+            date: {
+                id: 'date',
+                iobType: 'string',
+                valFromProperty: 'time',
+                readVal(val: number, adapter: ioBroker.myAdapter, device: ForeCastHourly, channel: ForeCastHourly, id: string) {
+                    return moment(val * 1000).format('ddd DD.MM.YYYY HH:mm');
                 },
             },
             uv: {

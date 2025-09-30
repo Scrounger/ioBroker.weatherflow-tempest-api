@@ -28,7 +28,19 @@ export var daily;
                 iobType: 'number',
             },
             day_start_local: {
+                id: 'timestamp',
                 iobType: 'number',
+                readVal(val, adapter, device, channel, id) {
+                    return val * 1000;
+                },
+            },
+            date: {
+                id: 'date',
+                iobType: 'string',
+                valFromProperty: 'day_start_local',
+                readVal(val, adapter, device, channel, id) {
+                    return moment(val * 1000).format('ddd DD.MM.YYYY');
+                },
             },
             icon: {
                 id: 'icon_url',

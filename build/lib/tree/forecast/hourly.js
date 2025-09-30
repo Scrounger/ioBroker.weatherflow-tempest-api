@@ -1,5 +1,6 @@
 import * as myHelper from '../../helper.js';
 import { ApiEndpoints } from "../../api/wft-api.js";
+import moment from "moment";
 export var hourly;
 (function (hourly) {
     let keys = undefined;
@@ -83,6 +84,14 @@ export var hourly;
                 iobType: 'number',
                 readVal(val, adapter, device, channel, id) {
                     return val * 1000;
+                },
+            },
+            date: {
+                id: 'date',
+                iobType: 'string',
+                valFromProperty: 'time',
+                readVal(val, adapter, device, channel, id) {
+                    return moment(val * 1000).format('ddd DD.MM.YYYY HH:mm');
                 },
             },
             uv: {

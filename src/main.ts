@@ -23,7 +23,6 @@ class WeatherflowTempestApi extends utils.Adapter {
 	updateSchedule: schedule.Job | undefined = undefined;
 
 	statesUsingValAsLastChanged = [          // id of states where lc is taken from the value
-		'time',
 	];
 
 	public constructor(options: Partial<utils.AdapterOptions> = {}) {

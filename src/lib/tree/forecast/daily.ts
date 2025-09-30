@@ -33,7 +33,19 @@ export namespace daily {
                 iobType: 'number',
             },
             day_start_local: {
+                id: 'timestamp',
                 iobType: 'number',
+                readVal(val: number, adapter: ioBroker.myAdapter, device: ForeCastDaily, channel: ForeCastDaily, id: string) {
+                    return val * 1000;
+                },
+            },
+            date: {
+                id: 'date',
+                iobType: 'string',
+                valFromProperty: 'day_start_local',
+                readVal(val: number, adapter: ioBroker.myAdapter, device: ForeCastDaily, channel: ForeCastDaily, id: string) {
+                    return moment(val * 1000).format('ddd DD.MM.YYYY');
+                },
             },
             icon: {
                 id: 'icon_url',

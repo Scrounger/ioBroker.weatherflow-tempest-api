@@ -15,8 +15,7 @@ class WeatherflowTempestApi extends utils.Adapter {
     wft;
     myIob;
     updateSchedule = undefined;
-    statesUsingValAsLastChanged = [
-        'time',
+    statesUsingValAsLastChanged = [ // id of states where lc is taken from the value
     ];
     constructor(options = {}) {
         super({

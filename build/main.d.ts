@@ -6,7 +6,7 @@ declare class WeatherflowTempestApi extends utils.Adapter {
     wft: WftApi;
     myIob: myIob;
     updateSchedule: schedule.Job | undefined;
-    statesUsingValAsLastChanged: string[];
+    statesUsingValAsLastChanged: any[];
     constructor(options?: Partial<utils.AdapterOptions>);
     /**
      * Is called when databases are connected and adapter received configuration.
