@@ -29,8 +29,7 @@ Get data for your [Tempest Weather Station](https://tempest.earth/tempest-home-w
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 1.1.2 (2025-10-08)
 
 - (Scrounger) weather specific roles added #21
 - (Scrounger) auto translation bug fix

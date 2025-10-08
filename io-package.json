@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "weatherflow-tempest-api",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "news": {
+      "1.1.2": {
+        "en": "weather specific roles added #21\nauto translation bug fix\ndependencies updated",
+        "de": "wetterspezifische rollen hinzugefügt #21\nautomatische übersetzung fehler beheben\naktualisierte abhängigkeiten",
+        "ru": "специальные погодные роли #21\nавтоматический перевод bug fix\nобновленные зависимости",
+        "pt": "funções específicas do tempo adicionado #21\ncorreção de erro de tradução automática\ndependências atualizadas",
+        "nl": "weer specifieke rollen toegevoegd #21\nauto vertaling fout fix\nafhankelijkheden bijgewerkt",
+        "fr": "rôles spécifiques aux conditions météorologiques ajoutés #21\ncorrection du bug de traduction automatique\ndépendances mises à jour",
+        "it": "meteo ruoli specifici aggiunto #21\ncorrezione di bug di traduzione automatica\ndipendenze aggiornate",
+        "es": "tiempo roles específicos añadidos #21\ncorrección de error de traducción automática\ndependencias actualizadas",
+        "pl": "pogoda specyficzne role dodane # 21\nautomatyczne tłumaczenie błąd naprawić\nzaktualizowane zależności",
+        "uk": "конкретні ролі погоди додано #21\nавтоматичного виправлення помилок перекладу\nоновлені залежності",
+        "zh-cn": "增加了21号气象具体角色\n自动翻译错误修正\n更新依赖关系"
+      },
       "1.1.1": {
         "en": "bug fixes",
         "de": "fehlerbehebungen",
