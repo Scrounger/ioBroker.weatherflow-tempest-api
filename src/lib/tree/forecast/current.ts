@@ -20,6 +20,7 @@ export namespace current {
                 unit(objDevice: ForeCastCurrent, objChannel: ForeCastCurrent, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitTemperature;
                 },
+                role: 'value.temperature',
             },
             brightness: {
                 iobType: 'number',
@@ -31,12 +32,14 @@ export namespace current {
                 unit(objDevice: ForeCastCurrent, objChannel: ForeCastCurrent, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitTemperature;
                 },
+                role: 'value.temperature.dewpoint',
             },
             feels_like: {
                 iobType: 'number',
                 unit(objDevice: ForeCastCurrent, objChannel: ForeCastCurrent, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitTemperature;
                 },
+                role: 'value.temperature.feelslike',
             },
             precip_accum_local_day: {
                 id: 'precipitation_accum_today',
@@ -44,6 +47,7 @@ export namespace current {
                 unit(objDevice: ForeCastCurrent, objChannel: ForeCastCurrent, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitPrecipitation;
                 },
+                role: 'value.precipitation.today',
             },
             precip_accum_local_yesterday: {
                 id: 'precipitation_accum_yesterday',
@@ -51,20 +55,17 @@ export namespace current {
                 unit(objDevice: ForeCastCurrent, objChannel: ForeCastCurrent, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitPrecipitation;
                 },
+                role: 'value.precipitation',
             },
             precip_minutes_local_day: {
                 id: 'precipitation_duration_today',
                 iobType: 'number',
-                unit(objDevice: ForeCastCurrent, objChannel: ForeCastCurrent, adapter: ioBroker.myAdapter) {
-                    return adapter.config.unitPrecipitation;
-                },
+                unit: 'Min.',
             },
             precip_minutes_local_yesterday: {
                 id: 'precipitation_duration_yesterday',
                 iobType: 'number',
-                unit(objDevice: ForeCastCurrent, objChannel: ForeCastCurrent, adapter: ioBroker.myAdapter) {
-                    return adapter.config.unitPrecipitation;
-                },
+                unit: 'Min.',
             },
             pressure_trend: {
                 iobType: 'string'
@@ -73,6 +74,7 @@ export namespace current {
                 id: 'humidity',
                 iobType: 'number',
                 unit: '%',
+                role: 'value.humidity',
             },
             sea_level_pressure: {
                 id: 'pressure',
@@ -80,17 +82,20 @@ export namespace current {
                 unit(objDevice: ForeCastCurrent, objChannel: ForeCastCurrent, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitPressure;
                 },
+                role: 'value.pressure',
             },
             solar_radiation: {
                 id: 'solarRadiation',
                 iobType: 'number',
                 unit: 'W/m2',
+                role: 'value.radiation',
             },
             station_pressure: {
                 iobType: 'number',
                 unit(objDevice: ForeCastCurrent, objChannel: ForeCastCurrent, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitPressure;
                 },
+                role: 'value.pressure',
             },
             time: {
                 id: 'timestamp',
@@ -102,6 +107,7 @@ export namespace current {
             uv: {
                 iobType: 'number',
                 name: 'uv index',
+                role: 'value.uv',
             },
             wet_bulb_globe_temperature: {
                 id: 'wet_bulb_globe_temperature',
@@ -123,15 +129,18 @@ export namespace current {
                 unit(objDevice: ForeCastCurrent, objChannel: ForeCastCurrent, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitWind;
                 },
+                role: 'value.speed.wind',
             },
             wind_direction: {
                 id: 'windDirection',
                 iobType: 'number',
                 unit: '°',
+                role: 'weather.direction.wind',
             },
             wind_direction_cardinal: {
                 id: 'windDirectionCardinal',
                 iobType: 'string',
+                role: 'weather.direction.wind',
             },
             wind_gust: {
                 id: 'windGust',
@@ -139,6 +148,7 @@ export namespace current {
                 unit(objDevice: ForeCastCurrent, objChannel: ForeCastCurrent, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitWind;
                 },
+                role: 'value.speed.wind.gust',
             },
         }
     }

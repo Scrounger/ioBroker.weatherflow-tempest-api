@@ -17,20 +17,23 @@ export namespace hourly {
                 unit(objDevice: ForeCastHourly, objChannel: ForeCastHourly, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitTemperature;
                 },
+                role: 'value.temperature',
             },
             conditions: {
                 iobType: 'string',
+                role: 'weather.title',
             },
             feels_like: {
                 iobType: 'number',
                 unit(objDevice: ForeCastHourly, objChannel: ForeCastHourly, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitTemperature;
                 },
+                role: 'value.temperature.feelslike',
             },
             icon: {
                 id: 'icon_url',
                 iobType: 'string',
-                role: 'url.icon',
+                role: 'weather.icon',
                 readVal(val: string, adapter: ioBroker.myAdapter, device: ForeCastHourly, channel: ForeCastHourly, id: string) {
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },
@@ -51,7 +54,7 @@ export namespace hourly {
             precip_icon: {
                 id: 'precipitation_icon_url',
                 iobType: 'string',
-                role: 'url.icon',
+                role: 'weather.icon',
                 readVal(val: string, adapter: ioBroker.myAdapter, device: ForeCastHourly, channel: ForeCastHourly, id: string) {
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },
@@ -60,21 +63,25 @@ export namespace hourly {
                 id: 'precipitation_chance',
                 iobType: 'number',
                 unit: '%',
+                role: 'value.precipitation.chance',
             },
             precip_type: {
                 id: 'precipitation_type',
                 iobType: 'string',
+                role: 'value.precipitation.type',
             },
             relative_humidity: {
                 id: 'humidity',
                 iobType: 'number',
                 unit: '%',
+                role: 'value.humidity',
             },
             station_pressure: {
                 iobType: 'number',
                 unit(objDevice: ForeCastHourly, objChannel: ForeCastHourly, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitPressure;
                 },
+                role: 'value.pressure',
             },
             sea_level_pressure: {
                 id: 'pressure',
@@ -82,6 +89,7 @@ export namespace hourly {
                 unit(objDevice: ForeCastHourly, objChannel: ForeCastHourly, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitPressure;
                 },
+                role: 'value.pressure',
             },
             time: {
                 id: 'timestamp',
@@ -101,6 +109,7 @@ export namespace hourly {
             uv: {
                 iobType: 'number',
                 name: 'uv index',
+                role: 'value.uv',
             },
             wind_avg: {
                 id: 'windAvg',
@@ -108,15 +117,18 @@ export namespace hourly {
                 unit(objDevice: ForeCastHourly, objChannel: ForeCastHourly, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitWind;
                 },
+                role: 'value.speed.wind',
             },
             wind_direction: {
                 id: 'windDirection',
                 iobType: 'number',
                 unit: '°',
+                role: 'weather.direction.wind',
             },
             wind_direction_cardinal: {
                 id: 'windDirectionCardinal',
                 iobType: 'string',
+                role: 'weather.direction.wind',
             },
             wind_gust: {
                 id: 'windGust',
@@ -124,6 +136,7 @@ export namespace hourly {
                 unit(objDevice: ForeCastHourly, objChannel: ForeCastHourly, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitWind;
                 },
+                role: 'value.speed.wind.gust',
             },
         }
     }

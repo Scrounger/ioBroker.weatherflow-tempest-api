@@ -18,6 +18,7 @@ export namespace daily {
                 unit(objDevice: ForeCastDaily, objChannel: ForeCastDaily, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitTemperature;
                 },
+                role: 'value.temperature.max',
             },
             air_temp_low: {
                 id: 'temperature_low',
@@ -25,9 +26,11 @@ export namespace daily {
                 unit(objDevice: ForeCastDaily, objChannel: ForeCastDaily, adapter: ioBroker.myAdapter) {
                     return adapter.config.unitTemperature;
                 },
+                role: 'value.temperature.min',
             },
             conditions: {
                 iobType: 'string',
+                role: 'weather.title',
             },
             day_num: {
                 iobType: 'number',
@@ -50,10 +53,10 @@ export namespace daily {
             icon: {
                 id: 'icon_url',
                 iobType: 'string',
-                role: 'url.icon',
                 readVal(val: string, adapter: ioBroker.myAdapter, device: ForeCastDaily, channel: ForeCastDaily, id: string) {
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },
+                role: 'weather.icon',
             },
             month_num: {
                 iobType: 'number',
@@ -61,31 +64,35 @@ export namespace daily {
             precip_icon: {
                 id: 'precipitation_icon_url',
                 iobType: 'string',
-                role: 'url.icon',
                 readVal(val: string, adapter: ioBroker.myAdapter, device: ForeCastDaily, channel: ForeCastDaily, id: string) {
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },
+                role: 'weather.icon',
             },
             precip_probability: {
                 id: 'precipitation_chance',
                 iobType: 'number',
                 unit: '%',
+                role: 'value.precipitation.chance',
             },
             precip_type: {
                 id: 'precipitation_type',
                 iobType: 'string',
+                role: 'value.precipitation.type',
             },
             sunrise: {
                 iobType: 'string',
                 readVal(val: number, adapter: ioBroker.myAdapter, device: ForeCastDaily, channel: ForeCastDaily, id: string) {
                     return moment(val * 1000).format('HH:mm');
                 },
+                role: 'date.sunrise',
             },
             sunset: {
                 iobType: 'string',
                 readVal(val: number, adapter: ioBroker.myAdapter, device: ForeCastDaily, channel: ForeCastDaily, id: string) {
                     return moment(val * 1000).format('HH:mm');
                 },
+                role: 'date.sunset',
             },
         }
     }

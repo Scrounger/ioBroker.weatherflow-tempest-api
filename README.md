@@ -21,7 +21,7 @@ Get data for your [Tempest Weather Station](https://tempest.earth/tempest-home-w
 | ------------ | :--: | :-----: |
 | observations | Rest |   tbd   |
 | stattions    | Rest |   tbd   |
-| forecast     | Rest |    ✔    |
+| forecast     | Rest |   ✔    |
 
 ## Changelog
 
@@ -32,6 +32,7 @@ Get data for your [Tempest Weather Station](https://tempest.earth/tempest-home-w
 
 ### **WORK IN PROGRESS**
 
+- (Scrounger) weather specific roles added #21
 - (Scrounger) auto translation bug fix
 - (Scrounger) dependencies updated
 
