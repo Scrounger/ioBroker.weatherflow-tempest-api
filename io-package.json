@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "weatherflow-tempest-api",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "news": {
+      "1.1.4": {
+        "en": "dependencies updated\ndowngrade @iobroker/adapter-core to v3.3.1 to prevent conflicts with js-controller < v7.1.0 in rare cases",
+        "de": "aktualisierte abhängigkeiten\ndowngrade @iobroker/adapter-core to v3.3.1, um konflikte mit js-controller < v7.1.0 in seltenen fällen zu verhindern",
+        "ru": "обновленные зависимости\nпонижение @iobroker/adapter-core до v3.3.1 для предотвращения конфликтов с js-контроллером < v7.1.0 в редких случаях",
+        "pt": "dependências atualizadas\ndowngrade @iobroker/adapter-core para v3.3.1 para evitar conflitos com js-controller < v7.1.0 em casos raros",
+        "nl": "afhankelijkheden bijgewerkt\ndowngrade @iobroker/adapter-core naar v3.3.1 om conflicten met js-controller < v7.1.0 in zeldzame gevallen te voorkomen",
+        "fr": "dépendances mises à jour\ndowngrade @iobroker/adaptateur-core to v3.3.1 pour prévenir les conflits avec js-controller < v7.1.0 dans de rares cas",
+        "it": "dipendenze aggiornate\ndowngrade @iobroker/adapter-core a v3.3.1 per prevenire conflitti con js-controller < v7.1.0 in rari casi",
+        "es": "dependencias actualizadas\ndowngrade @iobroker/adapter-core a v3.3.1 para prevenir conflictos con js-controller ■ v7.1.0 en casos raros",
+        "pl": "zaktualizowane zależności\ndowngrade @ iobroker / adapter- core do v3.3.1, aby zapobiec konfliktom ze sterownikiem js- controller < v7.1.0 w rzadkich przypadkach",
+        "uk": "оновлені залежності\n@iobroker/adapter-core to v3.3.1 для запобігання конфліктів з js-controller < v7.1.0 в рідкісних випадках",
+        "zh-cn": "更新依赖关系\n降级@iobrocco/ adapter- core 到 v3.3.1 , 以防止与 js- controler < v7.1.0 在罕见情况下的冲突"
+      },
       "1.1.3": {
         "en": "dependencies updated",
         "de": "aktualisierte abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "poprawki błędów\nprzy użyciu cron dla interwał aktualizacji",
         "uk": "виправлення помилок\nза допомогою cron для інтервалу оновлення",
         "zh-cn": "错误修正\n使用括号进行更新间隔"
-      },
-      "1.0.1": {
-        "en": "bug fixes\ndependencies updated",
-        "de": "fehlerbehebungen\naktualisierte abhängigkeiten",
-        "ru": "исправления ошибок\nобновленная информация о зависимостях",
-        "pt": "correções de bugs\ndependências atualizadas",
-        "nl": "foutherstel\nafhankelijkheden bijgewerkt",
-        "fr": "corrections des bogues\ndépendances mises à jour",
-        "it": "correzioni di bug\ndipendenze aggiornate",
-        "es": "bug fixes\ndependencias actualizadas",
-        "pl": "poprawki błędów\nzaktualizowane zależności",
-        "uk": "виправлення помилок\nоновлені залежності",
-        "zh-cn": "错误修正\n更新依赖关系"
       }
     },
     "titleLang": {
