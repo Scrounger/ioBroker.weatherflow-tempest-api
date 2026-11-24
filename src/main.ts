@@ -22,7 +22,9 @@ class WeatherflowTempestApi extends utils.Adapter {
 
 	updateSchedule: schedule.Job | undefined = undefined;
 
-	statesUsingValAsLastChanged = [          // id of states where lc is taken from the value
+	statesUsingValAsLastChanged = [          // id of states where lc is taken from the value (all timestamp states, value in ms)
+		"timestamp",
+		"lightning_strike_last_timestamp"
 	];
 
 	public constructor(options: Partial<utils.AdapterOptions> = {}) {

@@ -312,6 +312,19 @@ describe('lib/myIob.ts', () => {
             expect(spy).to.have.been.calledWith('ch.x', { val: 5, lc: 5 }, true);
         });
 
+        it('setzt lc in ms bei Timestamp-States, deren Key von der State-ID abweicht', async () => {
+            const fake = createTestAdapter();
+            const iob = createIob(fake, ['timestamp']);
+            const def: TreeDef = {
+                time: { id: 'timestamp', iobType: 'number', read: true, write: false, readVal: (val: number) => val * 1000 },
+            };
+            const spy = sinon.spy(fake, 'setStateChangedAsync');
+
+            await iob.createOrUpdateStates('ch', def, asData({ time: 1795508647 }), asData({ time: 1795508647 }));
+
+            expect(spy).to.have.been.calledWith('ch.timestamp', { val: 1795508647000, lc: 1795508647000 }, true);
+        });
+
         it('verarbeitet Objekte mit Channel und Unterstates', async () => {
             const fake = createTestAdapter();
             const iob = createIob(fake);

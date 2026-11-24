@@ -76,6 +76,10 @@ Fixtures are stored in `test/fixtures/local/api/` and are git-ignored, as they c
 -->
 
 ### **WORK IN PROGRESS**
+
+- (Scrounger) momment replaced with day.js
+- (Scrounger) bug fixes found by adapter checker
+- (Scrounger) bug fixes
 - (Scrounger) dependencies updated
 
 ### **WORK IN PROGRESS**

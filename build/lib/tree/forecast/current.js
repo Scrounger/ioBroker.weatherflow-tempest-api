@@ -23,6 +23,10 @@ export var current;
                 iobType: 'number',
                 unit: 'Lux'
             },
+            conditions: {
+                iobType: 'string',
+                role: 'weather.title',
+            },
             dew_point: {
                 id: 'dewPoint',
                 iobType: 'number',
@@ -45,6 +49,26 @@ export var current;
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },
                 role: 'url.icon',
+            },
+            lightning_strike_count_last_1hr: {
+                iobType: 'number',
+            },
+            lightning_strike_count_last_3hr: {
+                iobType: 'number',
+            },
+            lightning_strike_last_distance: {
+                iobType: 'number',
+                unit: 'km',
+            },
+            lightning_strike_last_distance_msg: {
+                iobType: 'string',
+            },
+            lightning_strike_last_epoch: {
+                id: 'lightning_strike_last_timestamp',
+                iobType: 'number',
+                readVal(val, adapter, device, channel, id) {
+                    return val * 1000;
+                },
             },
             precip_accum_local_day: {
                 id: 'precipitation_accum_today',
@@ -71,6 +95,12 @@ export var current;
                 id: 'precipitation_duration_yesterday',
                 iobType: 'number',
                 unit: 'Min.',
+            },
+            precip_probability: {
+                id: 'precipitation_chance',
+                iobType: 'number',
+                unit: '%',
+                role: 'value.precipitation.chance',
             },
             pressure_trend: {
                 iobType: 'string'

@@ -217,8 +217,8 @@ export class myIob {
                                     if (treeData && this.hasKey(treeData, valKey) && (this.hasKey(treeData, key) || this.hasKey(treeData, treeDef.valFromProperty))) {
                                         const val = treeDef.readVal ? await treeDef.readVal(treeData[valKey], this.adapter, fullData, channelData, `${channel}.${stateId}`) : treeData[valKey];
                                         let changedObj = undefined;
-                                        if (this.statesUsingValAsLastChanged.includes(key)) {
-                                            // set lc to last_seen value, only possible for numbers (null is no valid lc, js-controller rejects it)
+                                        if (this.statesUsingValAsLastChanged.includes(stateId ?? key)) {
+                                            // set lc to last_seen value (timestamps in ms), only possible for numbers (null is no valid lc, js-controller rejects it)
                                             changedObj = await this.adapter.setStateChangedAsync(`${channel}.${stateId}`, typeof val === 'number' ? { val: val, lc: val } : { val: val }, true);
                                         }
                                         else {

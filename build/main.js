@@ -8,14 +8,16 @@ import * as schedule from 'node-schedule';
 import url from 'node:url';
 import { WftApi } from './lib/api/wft-api.js';
 import * as myHelper from './lib/helper.js';
-import { myIob } from './lib/myIob.js';
 import dayjs from './lib/myDayjs.js';
+import { myIob } from './lib/myIob.js';
 import * as tree from './lib/tree/index.js';
 class WeatherflowTempestApi extends utils.Adapter {
     wft;
     myIob;
     updateSchedule = undefined;
-    statesUsingValAsLastChanged = [ // id of states where lc is taken from the value
+    statesUsingValAsLastChanged = [
+        "timestamp",
+        "lightning_strike_last_timestamp"
     ];
     constructor(options = {}) {
         super({

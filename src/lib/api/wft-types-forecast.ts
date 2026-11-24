@@ -19,6 +19,7 @@ export interface ForeCastCurrent {
     air_density: number;
     air_temperature: number;
     brightness: number;
+    conditions: string;
     delta_t: number;
     dew_point: number;
     feels_like: number;
@@ -33,6 +34,7 @@ export interface ForeCastCurrent {
     precip_accum_local_yesterday: number;
     precip_minutes_local_day: number;
     precip_minutes_local_yesterday: number;
+    precip_probability: number;
     pressure_trend: string;
     relative_humidity: number;
     sea_level_pressure: number;
