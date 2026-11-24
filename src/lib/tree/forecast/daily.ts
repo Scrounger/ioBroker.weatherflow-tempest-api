@@ -56,7 +56,7 @@ export namespace daily {
                 readVal(val: string, adapter: ioBroker.myAdapter, device: ForeCastDaily, channel: ForeCastDaily, id: string) {
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },
-                role: 'weather.icon',
+                role: 'url.icon',
             },
             month_num: {
                 iobType: 'number',
@@ -67,7 +67,7 @@ export namespace daily {
                 readVal(val: string, adapter: ioBroker.myAdapter, device: ForeCastDaily, channel: ForeCastDaily, id: string) {
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },
-                role: 'weather.icon',
+                role: 'url.icon',
             },
             precip_probability: {
                 id: 'precipitation_chance',

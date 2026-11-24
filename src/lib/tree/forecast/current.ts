@@ -1,3 +1,4 @@
+import { ApiEndpoints } from "../../api/wft-api.js";
 import { ForeCastCurrent } from "../../api/wft-types-forecast.js";
 import * as myHelper from '../../helper.js';
 import { myTreeDefinition } from "../../myIob.js";
@@ -40,6 +41,14 @@ export namespace current {
                     return adapter.config.unitTemperature;
                 },
                 role: 'value.temperature.feelslike',
+            },
+            icon: {
+                id: 'icon_url',
+                iobType: 'string',
+                readVal(val: string, adapter: ioBroker.myAdapter, device: ForeCastCurrent, channel: ForeCastCurrent, id: string) {
+                    return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
+                },
+                role: 'url.icon',
             },
             precip_accum_local_day: {
                 id: 'precipitation_accum_today',

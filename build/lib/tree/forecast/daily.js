@@ -51,7 +51,7 @@ export var daily;
                 readVal(val, adapter, device, channel, id) {
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },
-                role: 'weather.icon',
+                role: 'url.icon',
             },
             month_num: {
                 iobType: 'number',
@@ -62,7 +62,7 @@ export var daily;
                 readVal(val, adapter, device, channel, id) {
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },
-                role: 'weather.icon',
+                role: 'url.icon',
             },
             precip_probability: {
                 id: 'precipitation_chance',

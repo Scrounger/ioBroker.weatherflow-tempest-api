@@ -1,3 +1,4 @@
+import { ApiEndpoints } from "../../api/wft-api.js";
 import * as myHelper from '../../helper.js';
 export var current;
 (function (current) {
@@ -36,6 +37,14 @@ export var current;
                     return adapter.config.unitTemperature;
                 },
                 role: 'value.temperature.feelslike',
+            },
+            icon: {
+                id: 'icon_url',
+                iobType: 'string',
+                readVal(val, adapter, device, channel, id) {
+                    return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
+                },
+                role: 'url.icon',
             },
             precip_accum_local_day: {
                 id: 'precipitation_accum_today',

@@ -33,7 +33,7 @@ export namespace hourly {
             icon: {
                 id: 'icon_url',
                 iobType: 'string',
-                role: 'weather.icon',
+                role: 'url.icon',
                 readVal(val: string, adapter: ioBroker.myAdapter, device: ForeCastHourly, channel: ForeCastHourly, id: string) {
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },
@@ -54,7 +54,7 @@ export namespace hourly {
             precip_icon: {
                 id: 'precipitation_icon_url',
                 iobType: 'string',
-                role: 'weather.icon',
+                role: 'url.icon',
                 readVal(val: string, adapter: ioBroker.myAdapter, device: ForeCastHourly, channel: ForeCastHourly, id: string) {
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },

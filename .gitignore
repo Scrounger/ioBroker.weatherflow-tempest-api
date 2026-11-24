@@ -21,3 +21,14 @@ myrelease.sh
 test/testData.json
 
 ioBroker.weatherflow-tempest-api.lnk
+
+# test coverage reports (npm run test:coverage)
+coverage/
+
+# local environment / credentials (live tests)
+.env
+.env.*
+!.env.example
+
+# lokal erzeugte Test-Fixtures aus der echten API (nicht ins Repository)
+test/fixtures/local/

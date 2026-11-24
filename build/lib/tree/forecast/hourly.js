@@ -29,7 +29,7 @@ export var hourly;
             icon: {
                 id: 'icon_url',
                 iobType: 'string',
-                role: 'weather.icon',
+                role: 'url.icon',
                 readVal(val, adapter, device, channel, id) {
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },
@@ -50,7 +50,7 @@ export var hourly;
             precip_icon: {
                 id: 'precipitation_icon_url',
                 iobType: 'string',
-                role: 'weather.icon',
+                role: 'url.icon',
                 readVal(val, adapter, device, channel, id) {
                     return adapter.wft.getApiEndpoint(ApiEndpoints.icon, val);
                 },
