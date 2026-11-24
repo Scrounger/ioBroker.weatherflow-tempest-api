@@ -467,7 +467,7 @@ export class myIob {
 
                                             //@ts-ignore
                                             for (let i = 0; i <= treeData[key].length - 1; i++) {
-                                                const nr = i + (arrayNumberAdd as number);
+                                                const nr = i + arrayNumberAdd;
 
                                                 if (treeData[key][i] !== null && treeData[key][i] !== undefined) {
                                                     let idChannelArray: string | undefined = myHelper.zeroPad(nr, treeArrayDef.arrayChannelIdZeroPad || 0);
