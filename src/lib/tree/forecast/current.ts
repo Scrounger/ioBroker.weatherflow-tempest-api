@@ -1,13 +1,13 @@
-import { myTreeDefinition } from "../../myIob.js";
-import * as myHelper from '../../helper.js';
 import { ForeCastCurrent } from "../../api/wft-types-forecast.js";
+import * as myHelper from '../../helper.js';
+import { myTreeDefinition } from "../../myIob.js";
 
 export namespace current {
-    let keys: string[] = undefined;
+    let keys: string[] | undefined = undefined;
 
     export const idChannel = 'forecast.current';
 
-    export function get(): { [key: string]: myTreeDefinition } {
+    export function get(): { [key: string]: myTreeDefinition<any, ForeCastCurrent, ioBroker.myAdapter> } {
         return {
             air_density: {
                 id: 'airDensity',

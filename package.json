@@ -60,7 +60,7 @@
   ],
   "scripts": {
     "prebuild": "rimraf build",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "build-watch": "clear && tsc-watch --noClear --onSuccess 'iobroker restart weatherflow-tempest-api'",
     "watch": "build-adapter ts --watch",
     "prebuild:ts": "rimraf build",

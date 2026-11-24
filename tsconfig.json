@@ -14,8 +14,10 @@
 		// "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
 		"sourceMap": false /* Generates corresponding '.map' file. */,
 		// "outFile": "./",                       /* Concatenate and emit output to single file. */
-		"outDir": "./build" /* Redirect output structure to the directory. */,
-		"rootDir": "./src" /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */,
+		"outDir": "./build",
+		"rootDir": "./src",
+		// rootDir is set in tsconfig.build.json (tests import ../tools, so the root config must not restrict rootDir)
+		// "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
 		// "composite": true,                     /* Enable project compilation */
 		// "removeComments": true,                /* Do not emit comments to output. */
 		// "noEmit": true,                        /* Do not emit outputs. */
@@ -23,7 +25,7 @@
 		// "downlevelIteration": true,            /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
 		// "isolatedModules": true,               /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
 		/* Strict Type-Checking Options */
-		"strict": false /* Enable all strict type-checking options. TS6 defaults to true, project was never strict -> explicitly disabled. */,
+		// "strict": true,                           /* Enable all strict type-checking options. */
 		// "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. */
 		//"strictNullChecks": false,              /* Enable strict null checks. */
 		// "strictFunctionTypes": true,           /* Enable strict checking of function types. */
@@ -35,13 +37,13 @@
 		"importHelpers": true,
 		"skipLibCheck": true,
 		/* Additional Checks */
-		"noUnusedLocals": true /* Report errors on unused locals. */,
+		"noUnusedLocals": false /* Report errors on unused locals. */,
 		// "noUnusedParameters": true,            /* Report errors on unused parameters. */
 		"noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
 		"noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */,
 		/* Module Resolution Options */
-		"moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
-		"ignoreDeprecations": "6.0" /* Silences TS6 deprecation of 'moduleResolution: node' (required until migrated to 'bundler' or 'nodenext'). */,
+		"moduleResolution": "node10" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
+		"ignoreDeprecations": "6.0",
 		// "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
 		// "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
 		// "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
@@ -70,5 +72,9 @@
 		"build/**",
 		"node_modules",
 		"widgets/**"
-	]
+	],
+	// ts-node (ESM loader) must load the global type declarations (src/lib/adapter-config.d.ts)
+	"ts-node": {
+		"files": true
+	}
 }

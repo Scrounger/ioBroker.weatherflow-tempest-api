@@ -295,7 +295,7 @@ export class myIob {
                                     if ((this.hasKey(treeArrayDef, 'conditionToCreateState') && treeArrayDef.conditionToCreateState?.(fullData, channelData, this.adapter) === true) || !this.hasKey(treeArrayDef, 'conditionToCreateState')) {
                                         if ((!isWhiteList && !_.some(blacklistFilter, { id: `${filterId}${idChannelAppendix}` })) || (isWhiteList && _.some(blacklistFilter, x => x.id && x.id.startsWith(`${filterId}${idChannelAppendix}`))) || this.isRequired(treeArrayDef.required, fullData, channelData)) {
                                             await this.createOrUpdateChannel(`${idChannel}`, this.hasKey(treeArrayDef, 'name') ? treeArrayDef.name : key, this.hasKey(treeArrayDef, 'icon') ? treeArrayDef.icon : undefined, updateObject);
-                                            const arrayNumberAdd = this.hasKey(treeArrayDef, 'arrayStartNumber') ? treeArrayDef.arrayStartNumber : 0;
+                                            const arrayNumberAdd = (this.hasKey(treeArrayDef, 'arrayStartNumber') ? treeArrayDef.arrayStartNumber : 0) ?? 0;
                                             //@ts-ignore
                                             for (let i = 0; i <= treeData[key].length - 1; i++) {
                                                 const nr = i + arrayNumberAdd;

@@ -1,6 +1,6 @@
-import { type Dispatcher, request } from "undici";
 import { STATUS_CODES } from "node:http";
 import util from "node:util";
+import { type Dispatcher, request } from "undici";
 
 import { API_TIMEOUT } from "./wft-settings.js";
 import { ForeCast } from "./wft-types-forecast.js";
@@ -40,8 +40,8 @@ export class WftApi {
 
     private dispatcher!: Dispatcher;
 
-    private headers: Record<string, string>;
-    private apiErrorCount: number;
+    private headers: Record<string, string> = {};
+    private apiErrorCount: number = 0;
 
     public connectionTimeout: ioBroker.Timeout | undefined = undefined;
 
@@ -141,9 +141,9 @@ export class WftApi {
         return (code !== undefined) && (code >= 200) && (code < 300);
     }
 
-    public getApiEndpoint(endpoint: ApiEndpoints, param: string = undefined): string {
+    public getApiEndpoint(endpoint: ApiEndpoints, param?: string): string {
         let endpointPrefix = 'https://swd.weatherflow.com/swd/rest/';
-        let endpointSuffix: string;
+        let endpointSuffix = '';
 
         switch (endpoint) {
             case ApiEndpoints.forecast:
@@ -167,7 +167,7 @@ export class WftApi {
         return `${endpointPrefix}${endpointSuffix}`;
     }
 
-    public async getForeCast(): Promise<ForeCast> {
+    public async getForeCast(): Promise<ForeCast | undefined> {
         const logPrefix = `[${this.logPrefix}.getForeCast]`
 
         try {

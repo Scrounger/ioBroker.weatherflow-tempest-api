@@ -1,6 +1,6 @@
 import { current } from './current.js';
-import { hourly } from './hourly.js';
 import { daily } from './daily.js';
+import { hourly } from './hourly.js';
 const idChannel = 'forecast';
 function get() {
     return {
@@ -37,4 +37,4 @@ function get() {
         },
     };
 }
-export { idChannel, get, current, hourly, daily };
+export { current, daily, get, hourly, idChannel };

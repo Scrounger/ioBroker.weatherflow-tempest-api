@@ -4,13 +4,13 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 import * as utils from '@iobroker/adapter-core';
-import url from 'node:url';
 import moment from 'moment';
 import * as schedule from 'node-schedule';
-import * as myHelper from './lib/helper.js';
-import * as tree from './lib/tree/index.js';
+import url from 'node:url';
 import { WftApi } from './lib/api/wft-api.js';
+import * as myHelper from './lib/helper.js';
 import { myIob } from './lib/myIob.js';
+import * as tree from './lib/tree/index.js';
 class WeatherflowTempestApi extends utils.Adapter {
     wft;
     myIob;
@@ -111,7 +111,9 @@ class WeatherflowTempestApi extends utils.Adapter {
                 const foreCast = await this.wft.getForeCast();
                 if (isAdapterStart) {
                     await this.myIob.createOrUpdateDevice(tree.forecast.idChannel, 'forecast', undefined, undefined, undefined, true);
-                    await this.myIob.createOrUpdateStates(tree.forecast.idChannel, tree.forecast.get(), foreCast.forecast, foreCast.forecast, undefined, false, 'forecast', isAdapterStart);
+                    if (foreCast) {
+                        await this.myIob.createOrUpdateStates(tree.forecast.idChannel, tree.forecast.get(), foreCast.forecast, foreCast.forecast, undefined, false, 'forecast', isAdapterStart);
+                    }
                 }
                 if (foreCast) {
                     await this.updateForeCastCurrent(foreCast.current_conditions, isAdapterStart);
@@ -176,7 +178,7 @@ class WeatherflowTempestApi extends utils.Adapter {
                             if (isAdapterStart) {
                                 const i18n = { ...utils.I18n.getTranslatedObject('inXhours') };
                                 Object.keys(i18n).forEach(key => {
-                                    i18n[key] = i18n[key].replace('{0}', calcHours.toString());
+                                    i18n[key] = (i18n[key] ?? '').replace('{0}', calcHours.toString());
                                 });
                                 await this.myIob.createOrUpdateChannel(idChannel, i18n, undefined, true);
                             }
@@ -228,7 +230,7 @@ class WeatherflowTempestApi extends utils.Adapter {
                             if (isAdapterStart) {
                                 const i18n = { ...utils.I18n.getTranslatedObject('inXDays') };
                                 Object.keys(i18n).forEach(key => {
-                                    i18n[key] = i18n[key].replace('{0}', calcDay.toString());
+                                    i18n[key] = (i18n[key] ?? '').replace('{0}', calcDay.toString());
                                 });
                                 await this.myIob.createOrUpdateChannel(idChannel, i18n, undefined, true);
                             }

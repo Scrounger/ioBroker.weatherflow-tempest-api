@@ -1,6 +1,6 @@
-import { request } from "undici";
 import { STATUS_CODES } from "node:http";
 import util from "node:util";
+import { request } from "undici";
 import { API_TIMEOUT } from "./wft-settings.js";
 export var ApiEndpoints;
 (function (ApiEndpoints) {
@@ -12,8 +12,8 @@ export class WftApi {
     adapter;
     log;
     dispatcher;
-    headers;
-    apiErrorCount;
+    headers = {};
+    apiErrorCount = 0;
     connectionTimeout = undefined;
     constructor(adapter) {
         this.adapter = adapter;
@@ -90,9 +90,9 @@ export class WftApi {
     responseOk(code) {
         return (code !== undefined) && (code >= 200) && (code < 300);
     }
-    getApiEndpoint(endpoint, param = undefined) {
+    getApiEndpoint(endpoint, param) {
         let endpointPrefix = 'https://swd.weatherflow.com/swd/rest/';
-        let endpointSuffix;
+        let endpointSuffix = '';
         switch (endpoint) {
             case ApiEndpoints.forecast:
                 endpointSuffix = `better_forecast?station_id=${this.adapter.config.stationId}&units_temp=${this.adapter.config.unitTemperature}&units_wind=${this.adapter.config.unitWind}&units_pressure=${this.adapter.config.unitPressure}&units_precip=${this.adapter.config.unitPrecipitation}&units_distance=${this.adapter.config.unitDistance}&token=${this.adapter.config.accessToken}`;

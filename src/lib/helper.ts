@@ -12,11 +12,11 @@ export function zeroPad(source: any, places: number): string {
  * @param treefDefintion definitions from tree-devices.ts and tree-clients.ts
  * @returns
  */
-export function getAllKeysOfTreeDefinition(treefDefintion: { [key: string]: myTreeDefinition }): string[] {
-    const keys = [];
+export function getAllKeysOfTreeDefinition(treefDefintion: { [key: string]: myTreeDefinition<any, any, any> }): string[] {
+    const keys: any = [];
 
     // Hilfsfunktion für rekursive Durchsuchung des Objekts
-    function recurse(currentObj, prefix = ''): void {
+    function recurse(currentObj: any, prefix = ''): void {
         _.forOwn(currentObj, (value, key) => {
             const fullKey = (prefix ? `${prefix}.${key}` : key).replace('.array', '').replace('.object', '');
 
@@ -45,11 +45,11 @@ export function getAllKeysOfTreeDefinition(treefDefintion: { [key: string]: myTr
     return _.uniq(keys);
 }
 
-export function getAllIdsOfTreeDefinition(treefDefintion: { [key: string]: myTreeDefinition }): string[] {
-    const keys = [];
+export function getAllIdsOfTreeDefinition(treefDefintion: { [key: string]: myTreeDefinition<any, any, any> }): string[] {
+    const keys: any = [];
 
     // Hilfsfunktion für rekursive Durchsuchung des Objekts
-    function recurse(currentObj, prefix = ''): void {
+    function recurse(currentObj: any, prefix = ''): void {
         _.forOwn(currentObj, (value, key) => {
             let fullKey = prefix ? `${prefix}.${key}` : key;
 

@@ -1,15 +1,15 @@
-import { myTreeDefinition } from "../../myIob.js";
-import * as myHelper from '../../helper.js';
-import { ForeCastHourly } from "../../api/wft-types-forecast.js";
-import { ApiEndpoints } from "../../api/wft-api.js";
 import moment from "moment";
+import { ApiEndpoints } from "../../api/wft-api.js";
+import { ForeCastHourly } from "../../api/wft-types-forecast.js";
+import * as myHelper from '../../helper.js';
+import { myTreeDefinition } from "../../myIob.js";
 
 export namespace hourly {
-    let keys: string[] = undefined;
+    let keys: string[] | undefined = undefined;
 
     export const idChannel = 'forecast.hourly';
 
-    export function get(): { [key: string]: myTreeDefinition } {
+    export function get(): { [key: string]: myTreeDefinition<any, ForeCastHourly, ioBroker.myAdapter> } {
         return {
             air_temperature: {
                 id: 'temperature',

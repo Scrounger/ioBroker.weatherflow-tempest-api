@@ -1,12 +1,12 @@
-import { current } from './current.js';
-import { hourly } from './hourly.js';
-import { daily } from './daily.js';
-import { myTreeDefinition } from '../../myIob.js';
 import { ForeCastData } from '../../api/wft-types-forecast.js';
+import { myTreeDefinition } from '../../myIob.js';
+import { current } from './current.js';
+import { daily } from './daily.js';
+import { hourly } from './hourly.js';
 
 const idChannel = 'forecast'
 
-function get(): { [key: string]: myTreeDefinition } {
+function get(): { [key: string]: myTreeDefinition<any, ForeCastData, ioBroker.myAdapter> } {
     return {
         update: {
             id: 'update',
@@ -42,4 +42,4 @@ function get(): { [key: string]: myTreeDefinition } {
     }
 }
 
-export { idChannel, get, current, hourly, daily };
+export { current, daily, get, hourly, idChannel };

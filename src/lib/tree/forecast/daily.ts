@@ -1,16 +1,16 @@
 import moment from "moment";
 
-import { myTreeDefinition } from "../../myIob.js";
-import * as myHelper from '../../helper.js';
-import { ForeCastDaily } from "../../api/wft-types-forecast.js";
 import { ApiEndpoints } from "../../api/wft-api.js";
+import { ForeCastDaily } from "../../api/wft-types-forecast.js";
+import * as myHelper from '../../helper.js';
+import { myTreeDefinition } from "../../myIob.js";
 
 export namespace daily {
-    let keys: string[] = undefined;
+    let keys: string[] | undefined = undefined;
 
     export const idChannel = 'forecast.daily';
 
-    export function get(): { [key: string]: myTreeDefinition } {
+    export function get(): { [key: string]: myTreeDefinition<any, ForeCastDaily, ioBroker.myAdapter> } {
         return {
             air_temp_high: {
                 id: 'temperature_high',
