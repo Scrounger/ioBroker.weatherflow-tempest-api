@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "weatherflow-tempest-api",
-    "version": "1.1.4",
+    "version": "1.2.0",
     "news": {
+      "1.2.0": {
+        "en": "momment replaced with day.js\nbug fixes found by adapter checker\nbug fixes\ndependencies updated\nAdapter requires node.js >= 22 now.",
+        "de": "Moment ersetzt durch day.js\nAdapter-Checker hat Bug Fixes\nBugfixes\nAbhängigkeiten aktualisiert\nAdapter benötigt jetzt node.js >= 22.",
+        "ru": "момент заменен на day.js\nисправления ошибок, обнаруженные средством проверки адаптера\nисправления ошибок\nзависимости обновлены\nТеперь для адаптера требуется файл node.js >= 22.",
+        "pt": "substituída por day.js\nadapter checker corrigiu bugs\nbug fixes\ndependências atualizadas\nO adaptador exige node.js >= 2.",
+        "nl": "moment vervangen door day.js\nbugfixes gevonden door de adapterchecker\nbugfixes\nafhankelijkheden bijgewerkt\nVoor de adapter is nu node.js >= 22 nodig.",
+        "fr": "moment remplacé par day.js\nAdapter Checker a corrigé des bugs\nbugs fixes\ndépendances mises à jour\nAdapter nécessite node.js >= 22.",
+        "it": "momento sostituito da day.js\nfix trovati da Adapter Checker\nbug fix\ndipendenze aggiornate\nAdapter richiede node.js >= 2 ora.",
+        "es": "momento reemplazado por day.js\nAdapter Checker encontró errores\nbugs fix\ndependencias actualizadas\nEl adaptador necesita node.js >= 22 ahora.",
+        "pl": "momment zastąpiony na day.js\npoprawki błędów znalezione przez moduł sprawdzania adaptera\npoprawki błędów\naktualizacja zależności\nAdapter wymaga teraz node.js >= 22.",
+        "uk": "momment замінено на day.js\nвиправлення помилок, знайдених перевіркою адаптера\nвиправлення помилок\nзалежності оновлені\nТепер адаптер вимагає node.js >= 22.",
+        "zh-cn": "moment 替换为 day.js\n适配器检查器发现的错误修复\n错误修复\n依赖关系已更新\n适配器现在需要 node.js >= 22。"
+      },
       "1.1.4": {
         "en": "dependencies updated\ndowngrade @iobroker/adapter-core to v3.3.1 to prevent conflicts with js-controller < v7.1.0 in rare cases",
         "de": "aktualisierte abhängigkeiten\ndowngrade @iobroker/adapter-core to v3.3.1, um konflikte mit js-controller < v7.1.0 in seltenen fällen zu verhindern",
@@ -80,19 +93,6 @@
         "pl": "poprawki błędów",
         "uk": "виправлення помилок",
         "zh-cn": "错误修正"
-      },
-      "1.0.2": {
-        "en": "bug fixes\nusing cron for update interval",
-        "de": "fehlerbehebungen\nverwendung von cron für update-intervall",
-        "ru": "исправления ошибок\nиспользование cron для интервала обновления",
-        "pt": "correções de bugs\nusando cron para intervalo de atualização",
-        "nl": "foutherstel\ncron gebruiken voor update-interval",
-        "fr": "corrections des bogues\nutilisant cron pour l'intervalle de mise à jour",
-        "it": "correzioni di bug\nusando cron per l'intervallo di aggiornamento",
-        "es": "bug fixes\nusando cron para intervalo de actualización",
-        "pl": "poprawki błędów\nprzy użyciu cron dla interwał aktualizacji",
-        "uk": "виправлення помилок\nза допомогою cron для інтервалу оновлення",
-        "zh-cn": "错误修正\n使用括号进行更新间隔"
       }
     },
     "titleLang": {
