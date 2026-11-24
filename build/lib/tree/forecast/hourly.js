@@ -1,4 +1,4 @@
-import moment from "moment";
+import dayjs from "../../myDayjs.js";
 import { ApiEndpoints } from "../../api/wft-api.js";
 import * as myHelper from '../../helper.js';
 export var hourly;
@@ -99,7 +99,7 @@ export var hourly;
                 iobType: 'string',
                 valFromProperty: 'time',
                 readVal(val, adapter, device, channel, id) {
-                    return moment(val * 1000).format('ddd DD.MM.YYYY HH:mm');
+                    return dayjs(val * 1000).format('ddd DD.MM.YYYY HH:mm');
                 },
             },
             uv: {

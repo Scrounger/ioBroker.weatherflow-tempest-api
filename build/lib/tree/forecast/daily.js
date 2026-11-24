@@ -1,4 +1,4 @@
-import moment from "moment";
+import dayjs from "../../myDayjs.js";
 import { ApiEndpoints } from "../../api/wft-api.js";
 import * as myHelper from '../../helper.js';
 export var daily;
@@ -42,7 +42,7 @@ export var daily;
                 iobType: 'string',
                 valFromProperty: 'day_start_local',
                 readVal(val, adapter, device, channel, id) {
-                    return moment(val * 1000).format('ddd DD.MM.YYYY');
+                    return dayjs(val * 1000).format('ddd DD.MM.YYYY');
                 },
             },
             icon: {
@@ -78,14 +78,14 @@ export var daily;
             sunrise: {
                 iobType: 'string',
                 readVal(val, adapter, device, channel, id) {
-                    return moment(val * 1000).format('HH:mm');
+                    return dayjs(val * 1000).format('HH:mm');
                 },
                 role: 'date.sunrise',
             },
             sunset: {
                 iobType: 'string',
                 readVal(val, adapter, device, channel, id) {
-                    return moment(val * 1000).format('HH:mm');
+                    return dayjs(val * 1000).format('HH:mm');
                 },
                 role: 'date.sunset',
             },

@@ -1,7 +1,7 @@
-import moment from "moment";
 import { ApiEndpoints } from "../../api/wft-api.js";
 import { ForeCastHourly } from "../../api/wft-types-forecast.js";
 import * as myHelper from '../../helper.js';
+import dayjs from "../../myDayjs.js";
 import { myTreeDefinition } from "../../myIob.js";
 
 export namespace hourly {
@@ -103,7 +103,7 @@ export namespace hourly {
                 iobType: 'string',
                 valFromProperty: 'time',
                 readVal(val: number, adapter: ioBroker.myAdapter, device: ForeCastHourly, channel: ForeCastHourly, id: string) {
-                    return moment(val * 1000).format('ddd DD.MM.YYYY HH:mm');
+                    return dayjs(val * 1000).format('ddd DD.MM.YYYY HH:mm');
                 },
             },
             uv: {

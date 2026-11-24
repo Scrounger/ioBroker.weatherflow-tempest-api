@@ -5,13 +5,13 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 import * as utils from '@iobroker/adapter-core';
-import moment from 'moment';
 import * as schedule from 'node-schedule';
 import url from 'node:url';
 
 import { WftApi } from './lib/api/wft-api.js';
 import { ForeCastCurrent, ForeCastDaily, ForeCastHourly } from './lib/api/wft-types-forecast.js';
 import * as myHelper from './lib/helper.js';
+import dayjs from './lib/myDayjs.js';
 import { myIob, myTreeState } from './lib/myIob.js';
 import * as tree from './lib/tree/index.js';
 
@@ -45,7 +45,7 @@ class WeatherflowTempestApi extends utils.Adapter {
 		const logPrefix = '[onReady]:';
 
 		try {
-			moment.locale(this.language);
+			dayjs.locale(this.language);
 
 			await utils.I18n.init(`${utils.getAbsoluteDefaultDataDir().replace('iobroker-data/', '')}node_modules/iobroker.${this.name}/admin`, this);
 
@@ -202,8 +202,8 @@ class WeatherflowTempestApi extends utils.Adapter {
 
 					for (let i = 0; i <= data.length - 1; i++) {
 						const item = data[i];
-						const timestamp = moment.unix(item.time);
-						const calcHours = (moment.duration(timestamp.diff(moment().startOf('hour')))).asHours();
+						const timestamp = dayjs.unix(item.time);
+						const calcHours = timestamp.diff(dayjs().startOf('hour'), 'hour', true);
 
 						const idChannel = `${tree.forecast.hourly.idChannel}.${myHelper.zeroPad(calcHours, 3)}`;
 
@@ -264,8 +264,8 @@ class WeatherflowTempestApi extends utils.Adapter {
 
 					for (let i = 0; i <= data.length - 1; i++) {
 						const item = data[i];
-						const timestamp = moment.unix(item.day_start_local);
-						const calcDay = timestamp.dayOfYear() - moment().dayOfYear();
+						const timestamp = dayjs.unix(item.day_start_local);
+						const calcDay = timestamp.dayOfYear() - dayjs().dayOfYear();
 
 						const idChannel = `${tree.forecast.daily.idChannel}.${myHelper.zeroPad(calcDay, 3)}`;
 
@@ -311,7 +311,7 @@ class WeatherflowTempestApi extends utils.Adapter {
 
 	private async statesChanged(statesChanged: boolean, idLastUpdate: string, logPrefix: string): Promise<void> {
 		if (statesChanged) {
-			const nowString = moment().format(`ddd ${this.dateFormat} HH:mm`)
+			const nowString = dayjs().format(`ddd ${this.dateFormat} HH:mm`)
 
 			await this.setState(idLastUpdate, nowString, true);
 

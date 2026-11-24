@@ -4,10 +4,10 @@
  * - a synthetic sample that always exists (also in CI, where the git-ignored fixtures are absent)
  * - the recorded `better_forecast` fixture, only when it exists locally
  */
-import moment from 'moment';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import type { ForeCast, ForeCastCurrent, ForeCastDaily, ForeCastHourly } from '../../../src/lib/api/wft-types-forecast.js';
+import dayjs, { Dayjs } from '../../../src/lib/myDayjs.js';
 import { API_FIXTURE_DIR } from '../../../tools/fixtures.js';
 
 export interface ForecastSource {
@@ -24,7 +24,7 @@ export const hasBetterForecastFixture = existsSync(BETTER_FORECAST_FIXTURE);
  *
  * @param now reference time
  */
-export function createSampleForecast(now: moment.Moment = moment()): ForeCast {
+export function createSampleForecast(now: Dayjs = dayjs()): ForeCast {
     const hourStart = now.clone().startOf('hour');
     const dayStart = now.clone().startOf('day');
 

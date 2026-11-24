@@ -1,4 +1,4 @@
-import moment from "moment";
+import dayjs from "../../myDayjs.js";
 
 import { ApiEndpoints } from "../../api/wft-api.js";
 import { ForeCastDaily } from "../../api/wft-types-forecast.js";
@@ -47,7 +47,7 @@ export namespace daily {
                 iobType: 'string',
                 valFromProperty: 'day_start_local',
                 readVal(val: number, adapter: ioBroker.myAdapter, device: ForeCastDaily, channel: ForeCastDaily, id: string) {
-                    return moment(val * 1000).format('ddd DD.MM.YYYY');
+                    return dayjs(val * 1000).format('ddd DD.MM.YYYY');
                 },
             },
             icon: {
@@ -83,14 +83,14 @@ export namespace daily {
             sunrise: {
                 iobType: 'string',
                 readVal(val: number, adapter: ioBroker.myAdapter, device: ForeCastDaily, channel: ForeCastDaily, id: string) {
-                    return moment(val * 1000).format('HH:mm');
+                    return dayjs(val * 1000).format('HH:mm');
                 },
                 role: 'date.sunrise',
             },
             sunset: {
                 iobType: 'string',
                 readVal(val: number, adapter: ioBroker.myAdapter, device: ForeCastDaily, channel: ForeCastDaily, id: string) {
-                    return moment(val * 1000).format('HH:mm');
+                    return dayjs(val * 1000).format('HH:mm');
                 },
                 role: 'date.sunset',
             },
