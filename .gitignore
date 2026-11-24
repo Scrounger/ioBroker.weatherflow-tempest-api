@@ -20,3 +20,4 @@ mybuild.sh
 myrelease.sh
 test/testData.json
 
+ioBroker.weatherflow-tempest-api.lnk
