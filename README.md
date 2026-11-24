@@ -79,6 +79,8 @@ Get data for your [Tempest Weather Station](https://tempest.earth/tempest-home-w
 - (Scrounger) forecast api integrated
 - (Scrounger) initial release
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 
 MIT License
