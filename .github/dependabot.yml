@@ -1,6 +1,8 @@
+
 # Dependabot will run on day 21 of each month at 03:19 (Europe/Berlin timezone)
 version: 2
 updates:
+
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
@@ -11,10 +13,12 @@ updates:
     assignees:
       - 'Scrounger'
     versioning-strategy: 'increase'
+
     ignore:
       - dependency-name: '@types/node'
         update-types:
           - 'version-update:semver-major'
+
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
