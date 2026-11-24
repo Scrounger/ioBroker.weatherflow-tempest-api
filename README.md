@@ -29,6 +29,9 @@ Get data for your [Tempest Weather Station](https://tempest.earth/tempest-home-w
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+- (copilot) Adapter requires node.js >= 22 now
+
 ### 1.1.4 (2026-03-17)
 
 - (Scrounger) dependencies updated
